@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# Define function to toggle between Arabic and English keyboard layouts
+function toggle_keyboard_layout() {
+  current_layout=$(setxkbmap -query | awk '/layout:/ {print $2}')
+  
+  if [ "$current_layout" = "us" ]; then
+    setxkbmap ara
+  else
+    setxkbmap us
+  fi
+}
+
+toggle_keyboard_layout

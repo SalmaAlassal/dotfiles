@@ -1,0 +1,122 @@
+{
+  // Theme
+  "workbench.colorTheme": "Tokyo Night",
+  "workbench.sideBar.location": "left",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorCustomizations": {
+    "[Tokyo Night]": {
+      "editor.background": "#1a1b26",
+      "editorGroupHeader.tabsBackground": "#1a1b26",
+      "sideBar.background": "#1a1b26",
+      "sideBar.border": "#000000",
+      "tab.inactiveBackground": "#1e1e2ac8",
+      "tab.activeBackground": "#282e34",
+      "tab.activeBorderTop": "#282e34",
+      // "tab.activeBorder": "#7aa2f7",
+      "terminal.background": "#1a1b26",
+      "terminal.border": "#000000",
+      "panel.background": "#1a1b26",
+      "panel.border": "#2a4663",
+      "statusBar.background": "#1a1b26",
+      "statusBar.border": "#000000"
+    }
+  },
+
+  // Appearance
+  "editor.lineNumbers": "relative",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.verticalScrollbarSize": 0,
+  "editor.guides.bracketPairs": "active", // Vertical linses between brackets
+  // "editor.renderWhitespace": "all", // Show whitespace characters,
+  "editor.minimap.enabled": false, // Minimap is the small preview of the code on the right side of the editor.
+  "editor.fontLigatures": true,
+  // "workbench.startupEditor": "none",
+  "workbench.editor.highlightModifiedTabs": true,
+  "editor.cursorStyle": "line",
+  "editor.cursorBlinking": "expand",
+  // "breadcrumbs.enabled": false,
+
+  // Font
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontSize": 18,
+  "window.zoomLevel": 0.8,
+  
+  // ----------------------------------------------------
+
+  // Terminal Settings
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.lineHeight": 1.2,
+  "terminal.integrated.fontSize": 18,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.copyOnSelection": true,
+  // "terminal.integrated.gpuAcceleration": "canvas",
+
+  // ----------------------------------------------------
+
+  // Features
+  "files.autoSave": "afterDelay",
+  "editor.inlineSuggest.enabled": true,
+  // "editor.suggest.insertMode": "replace",
+  "explorer.confirmDelete": false,
+  // "explorer.confirmDragAndDrop": true,
+  "editor.autoClosingBrackets": "always",
+  "editor.linkedEditing": true,
+  // Enable word wrap for long lines in the editor
+  "editor.wordWrap": "on",
+
+  // ----------------------------------------------------
+
+  // Code Formatting
+  "editor.formatOnPaste": true, // Automatically formats the pasted content.
+  "editor.formatOnType": true, // Automatically formats code while typing.
+  // "editor.formatOnSave": true, // Automatically formats code when saving a file.
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "[c]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "[java]": {
+    "editor.defaultFormatter": "mwpb.java-prettier-formatter"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+
+  "html.format.indentInnerHtml": true,
+  "css.format.braceStyle": "expand",
+
+  // Extensions
+  "extensions.autoUpdate": false,
+  "errorLens.messageEnabled": true,
+  "liveServer.settings.CustomBrowser": "chrome",
+  // "prettier.printWidth": 110,
+
+  // Git
+  "git.decorations.enabled": true,
+  // "git.openRepositoryInParentFolders": "never",
+
+  // Marp
+  "markdown.marp.enableHtml": true,
+  "markdown.marp.exportType": "html",
+
+  // Markdown PDF
+  "markdown-pdf.displayHeaderFooter": false,
+
+  // Markdown Preview Github Style
+  // "markdown-preview-github-styles.colorTheme": "light",
+
+  // Neovim
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/vs-nvim/init.vim",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
+  },
+  "window.menuBarVisibility": "toggle"
+  // "vscode-neovim.neovimClean": true,
+}

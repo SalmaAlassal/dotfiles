@@ -1,0 +1,91 @@
+function dir_icon {
+  if [[ "$PWD" == "$HOME" ]]; then
+    echo "%B%F{black}%f%b"
+  else
+    echo "%B%F{blue}%f%b"
+  fi
+}
+
+function unpack()
+{
+    if [ "$#" -eq 0 ];
+    then
+        echo "Usage:  ./$(basename $0) [Compressed File]"
+    else
+       case $1 in
+             *.zip|*.7z)
+                  7z x $1
+                  ;;
+             *.bz2)
+                  bzip2 -d $1
+                  ;;
+             *.tar.gz)
+                  tar -xvf $1
+                  ;;
+             *.gz)
+                  gzip -d  $1
+                  ;;
+             *.tar)
+                  tar -xvf $1
+                  ;;
+             *.rar)
+                  rar x $1
+                  ;;
+             *)
+                  echo "Failed. Don\'t know the tool!!"
+                  ;;
+        esac
+    fi
+}
+
+# Display the current Git branch & status in the Bash prompt.
+function git_branch() {
+    if [ -d .git ]
+    then
+	    branch=$(git branch 2> /dev/null | awk '/\*/{print $2}');
+        STATUS=$(git_status)
+        echo "(${branch}${STATUS})"
+	fi
+}
+
+# Get current status of git repo
+function git_status() {
+    status=$(git status)
+    untracked=$(echo "${status}" | grep "Untracked files" &> /dev/null; echo "$?")
+    newfile=$(echo "${status}"   | grep "new file" &> /dev/null; echo "$?")
+    modified=$(echo "${status}"  | grep "modified" &> /dev/null; echo "$?")
+    renamed=$(echo "${status}"   | grep "renamed" &> /dev/null; echo "$?")
+    deleted=$(echo "${status}"   | grep "deleted" &> /dev/null; echo "$?")
+    ahead=$(echo "${status}"     | grep "Your branch is ahead of" &> /dev/null; echo "$?")
+	bits=""
+
+	if [ "${renamed}" == "0" ]; then
+		bits="R${bits}"
+	fi
+
+	if [ "${ahead}" == "0" ]; then 
+		bits="*${bits}"
+	fi
+
+	if [ "${newfile}" == "0" ]; then
+		bits="+${bits}"
+	fi
+
+	if [ "${untracked}" == "0" ]; then
+		bits="?${bits}"
+	fi
+
+	if [ "${deleted}" == "0" ]; then
+		bits="D${bits}"
+	fi
+
+	if [ "${modified}" == "0" ]; then
+		bits="M${bits}"
+	fi
+
+	if [ ! "${bits}" == "" ]; then
+		echo " ${bits}"
+	else
+		echo ""
+	fi
+}

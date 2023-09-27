@@ -1,0 +1,10 @@
+[user]
+    name = Salma Alassal
+    email = salma.alassal1@gmail.com
+[credential]
+	helper = store
+[core]
+	editor = vim
+[init]
+    defaultBranch = main
+

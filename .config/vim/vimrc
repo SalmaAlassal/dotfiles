@@ -1,0 +1,14 @@
+" Adjust Vim runtime path
+set runtimepath+=~/.config/vim/
+
+" This script contains mappings
+source ~/.config/vim/mapping.vim
+
+" This script contains general settings
+source ~/.config/vim/settings.vim
+
+" This script contains plugin specific settings
+source ~/.config/vim/plug-settings.vim
+
+" This script contains development settings
+source ~/.config/vim/development.vim

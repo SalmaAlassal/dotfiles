@@ -1,0 +1,75 @@
+# Handy shortcuts 
+alias h='history'
+alias c='clear'
+#alias ls='ls -F --color=auto'
+alias ls='lsd --group-directories-first'
+alias ll='lsd -la --group-directories-first'
+alias cat='bat'
+alias df="df -h"
+alias free="free -h"
+alias du="du -hs"
+alias xdg="xdg-open"
+alias xclip="xclip -sel clip"
+alias grep='grep --color'
+
+# Add safety nets
+# Prompt before overwrite 
+alias mv='mv -iv'
+alias cp='cp -ivr'
+#alias rm='rm -Ivr'
+alias rm=trash
+
+# Pacman package manager
+alias update='sudo pacman -Syu'
+alias i='sudo pacman -S'
+alias r='sudo pacman -Rns'
+
+# Print public IP address
+alias myip='echo Public IP :; curl ipecho.net/plain; echo'
+
+# Recent installed packages
+alias rpk="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
+
+# youtube-dl 
+# Download YouTube audio as MP3
+# alias yt='youtube-dl --extract-audio --add-metadata --xattrs --embed-thumbnail --audio-quality 0 --audio-format mp3'
+alias yt='yt-dlp --extract-audio --add-metadata --xattrs --embed-thumbnail --audio-quality 0 --audio-format mp3 --verbose'
+
+# Download YouTube video as MP4
+alias ytv='yt-dlp --merge-output-format mp4 -f "bestvideo+bestaudio[ext=m4a]/best" --embed-thumbnail --add-metadata'
+
+# --------------------------------------------------------------------------------------
+
+# Git
+
+# Clone a repo
+alias gl='git clone'
+
+# View status
+alias gs='git status'
+alias st='git status -s'
+
+# Add a file
+alias ga='git add'
+
+# Add all files
+alias gaa='git add --all'
+
+# Commit changes
+alias gc='git commit'
+alias cm='git commit -m'
+
+# Push changes
+alias gp='git push'
+
+# View git log
+alias gl='git log --oneline'
+alias lol="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+# Create a new Git branch and move to the new branch at the same time
+alias gb='git checkout -b'
+
+# View the difference
+alias gd='git diff'
+
+# --------------------------------------------------------------------------------------

@@ -1,0 +1,247 @@
+######################################
+# Layouts
+#######################################
+
+# alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+######################################
+# Keyboard Layout
+#######################################
+
+# Switch between Arabic and English 
+F3
+    toggle_keyboard_layout
+
+######################################
+# Appearance
+#######################################
+
+# Hide/Show Bar (Polybar and/or eww)
+alt + {minus,plus}
+	HideBar {-h,-u}
+
+# Random wallpaper
+super + w
+	feh -z --no-fehbg --bg-fill ~/.config/bspwm/rices/$RICETHEME/walls/
+
+# Change transparency on focused window
+super + alt {plus,minus,equal}
+	{picom-trans -c -o +3, picom-trans -c -o -1, picom-trans -c -d}
+
+######################################
+# Reload configs 
+#######################################
+
+# Reload sxhkd
+super + Escape
+	pkill -USR1 -x sxhkd; dunstify -u low -i ~/.config/bspwm/assets/reload.svg 'sxhkd' 'The configuration file has been reloaded successfully!'
+
+# Reload BSPWM
+super + alt + r
+	bspc wm -r
+
+######################################
+# Resizing
+#######################################
+
+# Resize windows
+super + alt + {h,j,k,l}
+    {bspc node -z left -20 0 || bspc node -z right -20 0, \
+    bspc node -z bottom 0 20 || bspc node -z top 0 20, \
+    bspc node -z top 0 -20 || bspc node -z bottom 0 -20, \
+    bspc node -z right 20 0 || bspc node -z left 20 0}
+
+# Contract a window by moving one of its side inward
+super + ctrl + {h,j,k,l}
+	bspc node -z {right -10 0,top 0 10,bottom 0 -10,left 10 0}
+
+# Global window gaps scroll
+super + alt + button{4,5}
+	bspc config window_gap $(( $(bspc config window_gap) {-,+} 5 ))
+
+# Focused desktop window gaps scroll
+super + button{4,5}
+	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 5 ))
+
+# Make split ratios equal
+super + equal
+	bspc node @/ --equalize
+
+# Make split ratios balanced
+super + minus
+	bspc node @/ --balance
+
+######################################
+# Movment
+#######################################
+
+# Move the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# Move a floating window
+alt + {H,J,K,L}
+	bspc node -v {-10 0,0 10,0 -10,10 0}
+
+# Move the current node to a given desktop
+super + shift + {1-9,0}
+    bspc node -d '^{1-9,10}'
+
+# Move the current node to a given desktop using numpad keys
+super + shift + {KP_{End,Down,Next,Left,Begin,Right,Home,Up,Prior}}
+    bspc node -d '^{1-9,10}'
+
+# Rotate desktop
+super + r
+	bspc node @/ --rotate {90,-90}
+
+# Circulate the leaves of the tree
+super + c
+	bspc node @/ --circulate {backward,forward}
+    
+######################################
+# Navigation
+#######################################
+
+# Window Navigation using super + hjkl
+super + {h,j,k,l}
+    bspc node -f {west,south,north,east}
+
+# Set focus to the last node/desktop,  grave = ` (backtick)
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+# Switch to the previous node in the current desktop
+alt + Tab
+	bspc node -f {next,prev}.local
+
+# Switch to desktops 1-9 using Super + 1-9
+super + {1-9,0}
+    bspc desktop -f '^{1-9,10}'
+
+# Switch to desktops 1-9 using Super + numpad keys
+super + {KP_{End,Down,Next,Left,Begin,Right,Home,Up,Prior}}
+    bspc desktop -f '^{1-9,10}'
+
+# focus the next/previous desktop in the current monitor
+super + {Left,Right}
+	bspc desktop -f {prev,next}.local
+
+# Swap the current node and the biggest node in the current desktop
+super + g
+    bspc node -s biggest.local
+
+# Swap the current node with the biggest node in the workspaces."
+super + shift + g
+	bspc node -s biggest
+
+######################################
+# Applications
+#######################################
+
+# keybindings help
+super + F1
+	KeybindingsHelp
+
+# Open Terminal (alacritty)
+super + Return
+	OpenApps --terminal
+
+# Floating Terminal
+super + alt + Return
+	OpenApps --floating
+
+# Open a scratchpad terminal 
+super + o
+	tdrop -a -w 70% -h 35% -y 0 -x 15%  --class scratch alacritty --class=scratch
+
+# Show/Hide Scratchpad Terminal
+super + alt + s
+	tdrop -a -w 70% -h 35% -y 0 -x 15%  --class scratch alacritty --class=scratch --hidden
+
+# Menu aplicaciones
+super + @space
+	OpenApps --menu
+
+# Rice Selector
+alt + @space
+	RiceSelector
+
+# Close and kill
+super + {_,shift + }q
+	bspc node -{c,k}
+
+# # Power off, Reboot, Log out, Lockscreen, kill an app
+# super + ctrl +  {p,r,q,l,k}
+# 	{systemctl poweroff, systemctl reboot,bspc quit,physlock -d,xkill}
+
+# Power off, Reboot, Log out, kill an app
+super + ctrl +  {p,r,q,k}
+	{systemctl poweroff, systemctl reboot,bspc quit,xkill}
+
+# Apps
+shift + alt + {b, t}
+    {google-chrome-stable, \
+     gnome-text-editor}
+
+######################################
+# Screenshot
+#######################################
+
+# Screenshot Now
+Print
+	ScreenShoTer --now
+
+# Screenshot Select
+super + Print
+	ScreenShoTer --sel
+
+# Screenshot in 10s
+# alt + Print
+# 	ScreenShoTer --in10
+
+######################################
+# Multimedia
+#######################################
+
+# Manage brightness
+XF86MonBrightness{Up,Down}
+    sh Brightness {up,down}
+
+# Volume control
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+	Volume{ --inc, --dec, --toggle}
+
+# It's not working
+# Music Control
+# XF86Audio{Next,Prev,Play,Stop}
+# 	MediaControl {--next,--previous,--toggle,--stop}
+
+######################################
+# Preselect
+#######################################
+
+# Preselect the direction
+super + ctrl + {Left,Down,Up,Right}
+	bspc node -p {west,south,north,east}
+
+# Preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# Cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+# Cancel the preselection for the focused desktop
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+######################################
+######################################
