@@ -6,7 +6,7 @@ In this repo, I've created my own configurations, twirled and borrowed those cre
 
 ## Important Note
 
-I use arch btw.  
+I use arch btw.
 
 ## What's in the box?
 
@@ -16,6 +16,7 @@ You'll find cheatsheets, configs, and other goodies. Here's a quick overview:
 
 - [Tmux](tmux.md)
 - [BSPWM](BSPWM.md)
+- [My VSCode Key Bindings](vscode-keybindings.md)
 
 ### Configs
 
