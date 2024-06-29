@@ -38,6 +38,9 @@ alias yt='yt-dlp --extract-audio --add-metadata --xattrs --embed-thumbnail --aud
 # Download YouTube video as MP4
 alias ytv='yt-dlp --merge-output-format mp4 -f "bestvideo+bestaudio[ext=m4a]/best" --embed-thumbnail --add-metadata'
 
+# Download YouTube playlist into a folder of the same name (MP3)
+alias ytp='yt-dlp --extract-audio --add-metadata --xattrs --embed-thumbnail --audio-quality 0 --audio-format mp3 --verbose -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
+
 # --------------------------------------------------------------------------------------
 
 # Git
