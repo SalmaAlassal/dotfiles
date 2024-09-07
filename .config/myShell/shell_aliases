@@ -42,6 +42,20 @@ alias ytv='yt-dlp --merge-output-format mp4 -f "bestvideo+bestaudio[ext=m4a]/bes
 alias ytp='yt-dlp --extract-audio --add-metadata --xattrs --embed-thumbnail --audio-quality 0 --audio-format mp3 --verbose -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
 
 # --------------------------------------------------------------------------------------
+# WIFI
+
+# List available Wi-Fi networks
+alias wifi-list='nmcli device wifi list'
+
+# Rescan for available Wi-Fi networks
+alias wifi-rescan='nmcli device wifi rescan && nmcli device wifi list'
+
+# Connect to Wi-Fi
+alias wifi-connect='nmcli device wifi connect'
+
+# Verify Wi-Fi connection
+alias wifi-status='nmcli connection show'
+# --------------------------------------------------------------------------------------
 
 # Git
 
