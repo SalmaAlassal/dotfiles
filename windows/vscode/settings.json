@@ -1,0 +1,189 @@
+{
+    // Workbench Theme
+    "workbench.sideBar.location": "left",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Moegi Light Vitesse",
+    "workbench.colorCustomizations": {
+        "[Moegi Light Vitesse]": {
+            "editor.background": "#F9F9FB",
+            "statusBar.background": "#F9F9FB",
+            "sideBar.background": "#F9F9FB",
+            "panel.background": "#f0f0f6ba",
+            "terminal.background": "#F9F9FB",
+            
+            // Customize tab colors
+            "tab.activeBackground": "#f5f5f9c1",
+            // "tab.activeBorderTop": "#66B395",
+            "tab.activeBorder": "#66B395",
+            "tab.inactiveBackground": "#F9F9FB",
+        }
+    },
+    // ----------------------------------------------------
+
+    // Appearance
+    "editor.lineNumbers": "relative",
+    "editor.scrollbar.vertical": "hidden",
+    "editor.scrollbar.verticalScrollbarSize": 0,
+    "editor.guides.bracketPairs": "active", // Vertical linses between brackets
+    // "editor.renderWhitespace": "all", // Show whitespace characters,
+    "editor.minimap.enabled": false, // Minimap is the small preview of the code on the right side of the editor.
+    "editor.fontLigatures": true,
+    // "workbench.startupEditor": "none",
+    "workbench.editor.highlightModifiedTabs": true,
+    "editor.cursorStyle": "line",
+    "editor.cursorBlinking": "expand",
+    // "breadcrumbs.enabled": false,
+
+    // ----------------------------------------------------
+
+    // Font
+    "editor.fontFamily": "JetBrains Mono",
+    "editor.fontSize": 18,
+    "window.zoomLevel": 0.8,
+  
+    // ----------------------------------------------------
+
+    // Indentation
+    // Make tab equivalent to 4 spaces
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
+
+    // ----------------------------------------------------
+
+    // Terminal Settings
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.lineHeight": 1.2,
+    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.copyOnSelection": true,
+    // "terminal.integrated.gpuAcceleration": "canvas",
+
+    // ----------------------------------------------------
+
+    // Features
+    "files.autoSave": "afterDelay",
+    "editor.inlineSuggest.enabled": true,
+    // "editor.suggest.insertMode": "replace",
+    "explorer.confirmDelete": false,
+    // "explorer.confirmDragAndDrop": true,
+    "editor.autoClosingBrackets": "always",
+    "editor.linkedEditing": true,
+    // Enable word wrap for long lines in the editor
+    "editor.wordWrap": "on",
+
+    // ----------------------------------------------------
+
+    // Code Formatting
+    "editor.formatOnPaste": true, // Automatically formats the pasted content.
+    "editor.formatOnType": true, // Automatically formats code while typing.
+    // "editor.formatOnSave": true, // Automatically formats code when saving a file.
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+    "html.format.indentInnerHtml": true,
+    "css.format.braceStyle": "expand",
+
+    // ----------------------------------------------------
+
+    // Extensions
+    "extensions.autoUpdate": false,
+
+    // Git
+    "git.decorations.enabled": true,
+
+    // GitHub Copilot
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": true,
+        "scminput": false
+    },
+    // ----------------------------------------------------
+
+    // VIM/Neovim Settings
+
+    "vim.neovimPath": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
+    "vim.useSystemClipboard": true,
+
+    // Keybindings that must be set here because they don't work in keybindings.json
+
+    // Insert mode keybindings
+    "vim.insertModeKeyBindings": [
+        // Escape insert mode with jj
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        }
+    ],
+
+    // Normal mode keybindings
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // Move to beginning and end of line with H and L
+        {
+            "before": ["H"],
+            "commands": ["cursorLineStart"]
+        },
+        {
+            "before": ["L"],
+            "commands": ["cursorLineEnd"]
+        },
+
+        // Toggle fold with zl
+        {
+            "before": ["z", "l"],
+            "commands": ["editor.toggleFold"]
+        },
+
+        // Fold all and unfold all with z; and zm
+        {
+            "before": ["z", ";"],
+            "commands": ["editor.foldAll"]
+        },
+        {
+            "before": ["z", "m"],
+            "commands": ["editor.unfoldAll"]
+        },
+
+        // Fold levels with z1, z2, z3, z4, z5
+        {
+            "before": ["z", "1"],
+            "commands": ["editor.foldLevel1"]
+        },
+        {
+            "before": ["z", "2"],
+            "commands": ["editor.foldLevel2"]
+        },
+        {
+            "before": ["z", "3"],
+            "commands": ["editor.foldLevel3"]
+        },
+        {
+            "before": ["z", "4"],
+            "commands": ["editor.foldLevel4"]
+        },
+        {
+            "before": ["z", "5"],
+            "commands": ["editor.foldLevel5"]
+        },
+
+        // Navigate folds
+        {
+            "before": ["z", "p"],
+            "commands": ["editor.gotoParentFold"]
+        },
+        {
+            "before": ["z", "j"],
+            "commands": ["editor.gotoNextFold"]
+        },
+        {
+            "before": ["z", "k"],
+            "commands": ["editor.gotoPreviousFold"]
+        },
+
+        // Rename with grn
+        {
+            "before": ["g", "r", "n"],
+            "commands": ["editor.action.rename"]
+        },
+    ],
+}

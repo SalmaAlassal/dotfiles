@@ -1,0 +1,322 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    // -----------------------------------------------------------------------
+    // VSCode General
+    // -----------------------------------------------------------------------
+
+    // ------------------------------------------------
+    // Movment
+    // ------------------------------------------------
+    {
+        "key": "alt+k",
+        "command": "editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+j",
+        "command": "editor.action.moveLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+
+    // ------------------------------------------------
+    // Navigation
+    // ------------------------------------------------
+    {
+        "key": "alt+h",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "alt+l",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.previousEditor",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.nextEditor",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+
+    // ------------------------------------------------
+    // Toggle
+    // ------------------------------------------------
+    {
+        "key": "alt+a",
+        "command": "workbench.action.toggleActivityBarVisibility"
+    },
+    {
+        "key": "alt+b",
+        "command": "workbench.action.toggleMenuBar"
+    },
+    {
+        "key": "alt+s",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "alt+shift+s",
+        "command": "workbench.action.toggleStatusbarVisibility"
+    },
+    // toggles didn't work, it just opens dev tools
+    {
+        "key": "alt+shift+d",
+        "command": "workbench.action.toggleDevTools"
+        // "when": "neovim.mode == normal"
+    },
+
+    // ------------------------------------------------
+    // Files
+    // ------------------------------------------------
+    {
+        "key": "alt+d",
+        "command": "workbench.action.files.openFolder",
+        "when": "openFolderWorkspaceSupport"
+    },
+    {
+        "key": "alt+f",
+        "command": "workbench.action.files.openFile",
+        "when": "true"
+    },
+
+    // ------------------------------------------------
+    // Resizing
+    // ------------------------------------------------
+    // Terminal
+    {
+        "key": "ctrl+shift+h",
+        "command": "workbench.action.terminal.resizePaneLeft"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "workbench.action.terminal.resizePaneRight"
+    },
+    {
+        "key": "ctrl+shift+j",
+        "command": "workbench.action.terminal.resizePaneDown"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "workbench.action.terminal.resizePaneUp"
+    },
+
+    // ------------------------------------------------
+    // Terminal
+    // ------------------------------------------------
+    {
+        "key": "alt+enter",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
+    },
+    {
+        "key": "alt+m",
+        "command": "workbench.action.toggleMaximizedPanel",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+/",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.positionPanelRight",
+                "workbench.action.terminal.focus"
+            ]
+        }
+    },
+    {
+        "key": "alt+,",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+            "workbench.action.positionPanelBottom",
+            "workbench.action.terminal.focus"
+            ]
+        }
+    },
+
+    // ------------------------------------------------
+    // Tabs
+    // ------------------------------------------------
+    // Close a tab
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    // close all tabs
+    {
+        "key": "ctrl+shift+w",
+        "command": "workbench.action.closeAllEditors"
+    },
+    // Reopen closed tab
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.reopenClosedEditor"
+    },
+
+    // ------------------------------------------------
+    // Quick Open configs
+    // ------------------------------------------------
+    {
+        "key": "alt+o",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
+    },
+
+    // ------------------------------------------------
+    // Run Configurations
+    // ------------------------------------------------
+
+    // Run without debugging
+    {
+        "key": "ctrl+shift+r",
+        "command": "workbench.action.debug.run"
+    },
+
+    // ------------------------------------------------
+    // General configs
+    // ------------------------------------------------
+    // Open show commands
+    {
+        "key": "alt+c",
+        "command": "workbench.action.showCommands"
+    },
+    // Open recent files
+    {
+        "key": "alt+r",
+        "command": "workbench.action.openRecent"
+    },
+    // Create a new file
+    {
+        "key": "a",
+        "command": "explorer.newFile",
+        "when": "explorerViewletFocus && !inputFocus"
+    },
+    // Create a new directory
+    {
+        "key": "shift+a",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletFocus && !inputFocus"
+    },
+    // Rename a file
+    {
+        "key": "r",
+        "command": "renameFile",
+        "when": "explorerViewletFocus && !inputFocus"
+    },
+
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    // -----------------------------------------------------------------------
+    // Neovim
+    // -----------------------------------------------------------------------
+
+    // Select all (<space>a)
+    {
+        "key": "space a",
+        "command": "editor.action.selectAll",
+        "when": "editorTextFocus && vim.mode == 'Normal'"
+    },
+
+    // Insert line below / above (<space>o and <space>O)
+    {
+        "key": "space o",
+        "command": "editor.action.insertLineAfter",
+        "when": "editorTextFocus && vim.mode == 'Normal'"
+    },
+    {
+        "key": "space shift+o",
+        "command": "editor.action.insertLineBefore",
+        "when": "editorTextFocus && vim.mode == 'Normal'"
+    },
+
+    // Scroll half page down / up (<space>j and <space>k)
+    {
+        "key": "space j",
+        "command": "cursorPageDown",
+        "when": "editorTextFocus && vim.mode == 'Normal'"
+    },
+    {
+        "key": "space k",
+        "command": "cursorPageUp",
+        "when": "editorTextFocus && vim.mode == 'Normal'"
+    },
+
+    // Escape insert mode with 'jj'
+    {
+        "key": "jj",
+        "command": "extension.vim_escape",
+        "when": "editorTextFocus && vim.mode == 'Insert'"
+    },
+
+    // Surround selected text with bold markdown syntax (** **)
+    {
+        "key": "space b",
+        "command": "editor.action.insertSnippet",
+        "args": { "snippet": "**$TM_SELECTED_TEXT**" },
+        "when": "editorTextFocus && vim.mode == 'Visual'"
+    },
+
+    // Surround selected text with backtick markdown syntax (` `)
+    {
+        "key": "space `",
+        "command": "editor.action.insertSnippet",
+        "args": { "snippet": "`$TM_SELECTED_TEXT`" },
+        "when": "editorTextFocus && vim.mode == 'Visual'"
+    },
+
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    // -----------------------------------------------------------------------
+    // Git
+    // -----------------------------------------------------------------------
+
+    // Open Source Control panel
+    {
+        "key": "alt+g",
+        "command": "workbench.view.scm"
+    },
+
+    // Stage selected file
+    {
+        "key": "alt+ctrl+a",
+        "command": "git.stage",
+    },
+
+    // Unstage selected file
+    {
+        "key": "alt+ctrl+u",
+        "command": "git.unstage",
+    },
+
+    // Rollback (discard changes to selected file)
+    {
+        "key": "ctrl+alt+z",
+        "command": "git.clean",
+    },
+
+    // Open changes of selected file (diff view)
+    {
+        "key": "ctrl+alt+d",
+        "command": "git.openChange",
+    },
+]
